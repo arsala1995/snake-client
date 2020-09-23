@@ -1,33 +1,23 @@
+const { setupInput } = require('./input');
 
-// const  setupInput  = require('./play.js').setupInput;
-// console.log(setupInput);
 
-// const setupInput = function () {
+// const setupInput = function() {
 //   const stdin = process.stdin;
 //   stdin.setRawMode(true);
 //   stdin.setEncoding('utf8');
 //   stdin.resume();
+//   handleUserInput();
 //   return stdin;
 // }
 
-// console.log("setup:" + setupInput);
-const setupInput = function() {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding('utf8');
-  stdin.resume();
-  handleUserInput();
-  return stdin;
-}
-
-const handleUserInput = function() {
-  stdin.on('data', (data) => {
-    if (data == '\u0003') {
-    process.exit();
-    }
+// const handleUserInput = function() {
+//   stdin.on('data', (data) => {
+//     if (data == '\u0003') {
+//     process.exit();
+//     }
     
-    });
-}
+//     });
+// }
 
 const { Console } = require('console');
 const net = require('net');
@@ -65,6 +55,7 @@ const connect = function () {
     //   conn.write("Move: up");
     // }, 50);
     const setupInput1 = setupInput();
+
     setupInput1.on('data', (data) => {
       
 
