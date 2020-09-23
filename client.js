@@ -14,6 +14,24 @@ const connect = function() {
     // when a connection is established
     console.log("successfully connected to server");
     conn.write("Name: Ars");
+
+    setTimeout(() => {
+      conn.write("Move: up");
+    }, 50);
+    setTimeout(() => {
+      conn.write("Move: left");
+    }, 100);
+    setTimeout(() => {
+      conn.write("Move: down");
+    }, 150);
+    setTimeout(() => {
+      conn.write("Move: right");
+    }, 200);
+    
+    setInterval(() => {
+      conn.write("Move: up");
+    }, 50);
+   
     });
 
   conn.on('data', (data) => {
