@@ -1,4 +1,6 @@
 const stdin = process.stdin;
+
+
 const setupInput = function() {
   
   stdin.setRawMode(true);
@@ -13,8 +15,11 @@ const handleUserInput = function() {
     if (data == '\u0003') {
     process.exit();
     }
-    
+  else{
+    return data;
+  }
     });
 }
+
 
 module.exports = { setupInput };

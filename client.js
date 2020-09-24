@@ -1,24 +1,5 @@
 const { setupInput } = require('./input');
 
-
-// const setupInput = function() {
-//   const stdin = process.stdin;
-//   stdin.setRawMode(true);
-//   stdin.setEncoding('utf8');
-//   stdin.resume();
-//   handleUserInput();
-//   return stdin;
-// }
-
-// const handleUserInput = function() {
-//   stdin.on('data', (data) => {
-//     if (data == '\u0003') {
-//     process.exit();
-//     }
-    
-//     });
-// }
-
 const { Console } = require('console');
 const net = require('net');
 const stdin = process.stdin;
@@ -57,10 +38,25 @@ const connect = function () {
     const setupInput1 = setupInput();
 
     setupInput1.on('data', (data) => {
-      
+      if (data == 'w'){
+        conn.write("Move: up");
+        console.log("up");
+      }
+      else if (data == 's'){
+        conn.write("Move: down");
+        console.log("down");
+      }
+     else if (data == 'a'){
+        conn.write("Move: left");
+        console.log("left");
+      }
+      else if (data == 'd'){
+        conn.write("Move: right");
+        console.log("right");
+      }
 
-       console.log("the new data: " + data);
-       conn.write(data);
+      //  console.log("the new data: " + data);
+      //  conn.write(data);
     });
  
   });
